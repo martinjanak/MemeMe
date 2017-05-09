@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -42,11 +42,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         memeTextAttributes[NSParagraphStyleAttributeName] = paragraphStyle
         
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
-        topTextField.delegate = topTextFieldDelegate
-        bottomTextField.delegate = bottomTextFieldDelegate
+        configureTextField(textField: topTextField, delegate: topTextFieldDelegate)
+        configureTextField(textField: bottomTextField, delegate: bottomTextFieldDelegate)
+    }
+    
+    func configureTextField(textField: UITextField, delegate: UITextFieldDelegate) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.delegate = delegate
     }
     
     func setDefaultValues() {
@@ -130,15 +132,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         
-//        setBars(hidden: true)
-        
-        // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        
-//        setBars(hidden: false)
         
         let imageRatio = imagePickerView.image!.size.width/imagePickerView.image!.size.height
         let frameRatio = imagePickerView.frame.size.width/imagePickerView.frame.size.height
@@ -150,26 +147,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func setBars(hidden: Bool) {
-        navigationBar.isHidden = hidden
-        toolBar.isHidden = hidden
-    }
-    
     @IBAction func share(_ sender: Any) {
         let memedImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         controller.completionWithItemsHandler = {(activityType, completed, returnedItems, error) in
-            self.save(memedImage)
+            if completed {
+                self.save(memedImage)
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         self.present(controller, animated: true, completion: nil)
     }
     
     func save(_ memedImage:UIImage) {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     @IBAction func cancel(_ sender: Any) {
         setDefaultValues()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func cutTopAndBottomOf(image: UIImage) -> UIImage {
