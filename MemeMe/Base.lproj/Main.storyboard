@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JOb-It-Pfh">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9yK-Qw-TQs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kwq-TB-VF4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X1-aM-Bv2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="4" y="20" width="659" height="355"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
@@ -52,15 +52,15 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5i2-4s-lDz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="4" y="40" width="659" height="291"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQv-6S-tF6" userLabel="Bottom Tool Bar">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="4" y="331" width="659" height="44"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="zix-f9-vCq"/>
@@ -69,13 +69,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ktn-RR-gXB"/>
                                     <barButtonItem systemItem="camera" id="Ckx-ar-iFu">
                                         <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="MaS-FX-qwt"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="hS2-1k-0tA"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eC7-SU-pP5"/>
-                                    <barButtonItem title="Album" id="2st-CD-UEL">
+                                    <barButtonItem tag="1" title="Album" id="2st-CD-UEL">
                                         <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="ki9-wi-ICk"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="cYd-nn-cob"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="C7U-U7-Dcz"/>
@@ -83,7 +83,10 @@
                                 <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ze1-iG-Vb8" userLabel="Top Tool Bar">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="4" y="0.0" width="659" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="K5q-vd-R3d"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="action" id="K6G-iT-VTK">
                                         <connections>
@@ -99,7 +102,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVq-99-oaD">
-                                <rect key="frame" x="16" y="104" width="343" height="40"/>
+                                <rect key="frame" x="20" y="50" width="627" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="99C-Pp-Tyq"/>
                                 </constraints>
@@ -108,7 +111,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Hh-iC-uBd">
-                                <rect key="frame" x="16" y="543" width="343" height="40"/>
+                                <rect key="frame" x="20" y="281" width="627" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Zff-zc-bL2"/>
                                 </constraints>
@@ -125,7 +128,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="7Hh-iC-uBd" secondAttribute="leading" id="Xv7-2Q-dmH"/>
                             <constraint firstAttribute="topMargin" secondItem="Ze1-iG-Vb8" secondAttribute="top" id="ZNN-Ij-Cxb"/>
                             <constraint firstItem="hQv-6S-tF6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ZTG-9I-t5r"/>
-                            <constraint firstItem="5i2-4s-lDz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="44" id="aeg-Iz-9H5"/>
+                            <constraint firstItem="5i2-4s-lDz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="aeg-Iz-9H5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5i2-4s-lDz" secondAttribute="trailing" constant="-16" id="cHu-mr-jhO"/>
                             <constraint firstItem="hQv-6S-tF6" firstAttribute="top" secondItem="7Hh-iC-uBd" secondAttribute="bottom" constant="10" id="cPz-a3-HLu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Hh-iC-uBd" secondAttribute="trailing" id="fVV-Ge-Q5F"/>
@@ -134,7 +137,7 @@
                             <constraint firstItem="hQv-6S-tF6" firstAttribute="top" secondItem="7Hh-iC-uBd" secondAttribute="bottom" constant="40" id="irD-sb-2E9"/>
                             <constraint firstItem="Ze1-iG-Vb8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="kFd-Bu-HDb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hVq-99-oaD" secondAttribute="leading" id="nIy-pd-YUm"/>
-                            <constraint firstItem="5i2-4s-lDz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="64" id="sCO-NM-Q2u"/>
+                            <constraint firstItem="5i2-4s-lDz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="60" id="sCO-NM-Q2u"/>
                             <constraint firstItem="hVq-99-oaD" firstAttribute="top" secondItem="Ze1-iG-Vb8" secondAttribute="bottom" constant="10" id="tRr-kK-F3g"/>
                             <constraint firstItem="hVq-99-oaD" firstAttribute="top" secondItem="Ze1-iG-Vb8" secondAttribute="bottom" constant="40" id="thG-nn-jK6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hQv-6S-tF6" secondAttribute="bottom" id="u4h-44-HPl"/>
@@ -170,11 +173,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="albumButton" destination="2st-CD-UEL" id="ccb-4W-dVE"/>
                         <outlet property="bottomTextField" destination="7Hh-iC-uBd" id="Kqp-h4-V4x"/>
                         <outlet property="cameraButton" destination="Ckx-ar-iFu" id="mGc-u6-egU"/>
                         <outlet property="imagePickerView" destination="5i2-4s-lDz" id="JcE-Gf-C96"/>
                         <outlet property="shareButton" destination="K6G-iT-VTK" id="9KE-Rq-jEq"/>
-                        <outlet property="toolBar" destination="hQv-6S-tF6" id="WiI-3c-ZOx"/>
                         <outlet property="topTextField" destination="hVq-99-oaD" id="Rv7-WB-wDe"/>
                     </connections>
                 </viewController>
@@ -226,19 +229,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Ymo-41-HlY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I0r-5Q-Fbf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VW-Pg-kRA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="4" y="64" width="659" height="262"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY7-Kc-4OZ">
-                                        <rect key="frame" x="103" y="259" width="169" height="36"/>
+                                        <rect key="frame" x="245" y="113" width="169" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Create new Meme!"/>
                                         <connections>
-                                            <action selector="noMemeAddMeme:" destination="HsI-S8-dHb" eventType="touchUpInside" id="k8E-He-MnZ"/>
-                                            <action selector="noMemeAddMeme:" destination="6C3-fB-pcT" eventType="touchUpInside" id="mNB-IF-5Ju"/>
+                                            <action selector="addANewMeme:" destination="HsI-S8-dHb" eventType="touchUpInside" id="Jx3-Pa-Qbq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -249,7 +251,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fod-eU-bud">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="4" y="64" width="659" height="262"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a3E-WB-KfV">
                                     <size key="itemSize" width="140" height="140"/>
@@ -302,7 +304,7 @@
                     <navigationItem key="navigationItem" id="bDP-4J-lhO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1N7-GY-p24">
                             <connections>
-                                <action selector="addMeme:" destination="HsI-S8-dHb" id="ght-72-185"/>
+                                <action selector="addANewMeme:" destination="HsI-S8-dHb" id="jXx-yx-twC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -341,18 +343,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Q0I-G5-whR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wk1-YZ-fcw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REz-oJ-OnD">
-                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <rect key="frame" x="20" y="64" width="627" height="262"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ak1-qn-Ce8">
-                                        <rect key="frame" x="86.5" y="259" width="169" height="36"/>
+                                        <rect key="frame" x="228.5" y="113" width="169" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Create new Meme!"/>
                                         <connections>
-                                            <action selector="noMemeAddMeme:" destination="6C3-fB-pcT" eventType="touchUpInside" id="VIZ-rb-J8o"/>
+                                            <action selector="addANewMeme:" destination="6C3-fB-pcT" eventType="touchUpInside" id="SqR-Yh-jCv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -363,14 +365,14 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fAa-8Z-Cex">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="4" y="64" width="659" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" id="ERy-7V-YOU" customClass="MemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="659" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ERy-7V-YOU" id="0xt-xK-uti">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="659" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-UT-mws">
@@ -381,7 +383,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-wj-2YR">
-                                                    <rect key="frame" x="64" y="0.0" width="595" height="44"/>
+                                                    <rect key="frame" x="64" y="0.0" width="311" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -424,7 +426,7 @@
                     <navigationItem key="navigationItem" id="EIP-bH-khg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="m0U-YB-OJN">
                             <connections>
-                                <action selector="addMeme:" destination="6C3-fB-pcT" id="USx-hJ-Eh5"/>
+                                <action selector="addANewMeme:" destination="6C3-fB-pcT" id="5z5-Jl-gSQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

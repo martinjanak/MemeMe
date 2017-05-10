@@ -67,15 +67,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         self.navigationController!.pushViewController(detailController, animated: true)
     }
     
-    @IBAction func addMeme(_ sender: Any) {
-        addANewMeme()
-    }
-    
-    @IBAction func noMemeAddMeme(_ sender: Any) {
-        addANewMeme()
-    }
-    
-    func addANewMeme() {
+    @IBAction func addANewMeme(_ sender: Any) {
         let editorController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
         self.navigationController!.present(editorController, animated: true, completion: nil)
     }

@@ -23,14 +23,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var imagePickerView: UIImageView!
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var toolBar: UIToolbar!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,18 +67,20 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         unsubscribeFromKeyboardNotifications()
     }
     
-    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-        pickAnImage(.photoLibrary)
-    }
-    
-    @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        pickAnImage(.camera)
-    }
-    
-    func pickAnImage(_ sourceType: UIImagePickerControllerSourceType) {
+    @IBAction func pickAnImage(_ sender: Any) {
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = sourceType
+        
+        switch (sender as! UIBarButtonItem).tag {
+            case albumButton.tag:
+                imagePicker.sourceType = .photoLibrary
+            case cameraButton.tag:
+                imagePicker.sourceType = .camera
+            default:
+                imagePicker.sourceType = .photoLibrary
+        }
+        
         present(imagePicker, animated: true, completion: nil)
     }
     
